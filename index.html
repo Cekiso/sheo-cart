@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sneakers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header>
+    <!-- cart -->
+    <div class="cart-icon">
+  🛒 <span class="cart-count">0</span>
+</div>
+
+<div class="cart-drawer">
+  <div class="cart-header">
+    <h3 class="cartName">Your Cart</h3>
+    <button class="cart-close">&times;</button>
+  </div>
+  <div class="cart-items"></div>
+  <div class="cart-footer">
+    <p>Total: R <span class="cart-total">0</span></p>
+    <button class="checkout-btn">Checkout</button>
+  </div>
+</div>
+<div class="cart-overlay"></div>
+
+    <div class="tophearder">
+      <h2 class="logo">.SNEAKERS</h2>
+
+      <!-- Hamburger toggle (mobile only) -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="search-container">
+        <input type="search" id="input" placeholder="Search" class="searchInput">
+        <span class="search-icon">🔍</span>
+      </div>
+    </div>
+
+    <nav id="nav" class="nav-closed">
+      <ul>
+        <li class="menuItem"><a href="#" class="active">Air Force</a></li>
+        <li class="menuItem"><a href="#">Dunk</a></li>
+        <li class="menuItem"><a href="#">Jordans</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========== SLIDER ========== -->
+  <section class="slider">
+    <div class="sliderWrapper" id="sliderWrapper">
+      <div class="sliderItem">
+        <img src="img/airforcewhite.png" alt="Air Force White" class="sliderImg">
+        <div class="sliderBg"></div>
+        <h1 class="sliderTitle">Air Force<br>New<br>Season</h1>
+        <h2 class="sliderPrice">R1800</h2>
+        <button class="buyButton">Buy Now</button>
+      </div>
+      <div class="sliderItem">
+        <img src="img/dunckbrown.png" alt="Dunk Brown" class="sliderImg">
+        <div class="sliderBg"></div>
+        <h1 class="sliderTitle">Dunk<br>New<br>Season</h1>
+        <h2 class="sliderPrice">R2800</h2>
+        <button class="buyButton">Buy Now</button>
+      </div>
+      <div class="sliderItem">
+        <img src="img/jordanblue.png" alt="Jordan Blue" class="sliderImg">
+        <div class="sliderBg"></div>
+        <h1 class="sliderTitle">Jordans<br>New<br>Season</h1>
+        <h2 class="sliderPrice">R3100</h2>
+        <button class="buyButton">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- Dots -->
+    <div class="sliderDots">
+      <span class="dot active" data-index="0"></span>
+      <span class="dot" data-index="1"></span>
+      <span class="dot" data-index="2"></span>
+    </div>
+  </section>
+
+  <!-- ========== FEATURES ========== -->
+  <section class="features">
+    <div class="feature">
+      <img src="img/shipping.png" alt="Free Shipping" class="featureIcon">
+      <span class="featureTitle">Free Shipping</span>
+      <span class="featureDesc">Free shipping worldwide on all orders.</span>
+    </div>
+    <div class="feature">
+      <img src="img/giftcard.png" alt="Gift Card" class="featureIcon">
+      <span class="featureTitle">Gift Card</span>
+      <span class="featureDesc">Buy a gift card for someone special.</span>
+    </div>
+    <div class="feature">
+      <img src="img/box.png" alt="30 Days Return" class="featureIcon">
+      <span class="featureTitle">30 Days Return</span>
+      <span class="featureDesc">No-questions return and easy refund in 30 days.</span>
+    </div>
+    <div class="feature">
+      <img src="img/contactus.png" alt="Contact Us" class="featureIcon">
+      <span class="featureTitle">Contact Us</span>
+      <span class="featureDesc">Keep in touch via our email support system.</span>
+    </div>
+  </section>
+
+  <!-- ========== PRODUCT ========== -->
+  <div class="products">
+    <img src="./img/airforcered.png" alt="Air Force Red" class="productImg">
+    <div class="productDetails">
+      <h1 class="productTitle">Air Force</h1>
+      <h2 class="productPrice">R1800</h2>
+      <p class="productDesc">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Impedit, repudiandae voluptatum voluptatem possimus ullam ratione a aut obcaecati,
+        illo aperiam voluptates amet eius vel atque modi reiciendis beatae exercitationem corrupti.</p>
+      <div class="colors">
+        <div class="color" style="background-color:red;"></div>
+        <div class="color" style="background-color:white; border:1px solid #ccc;"></div>
+      </div>
+      <div class="sizes">
+        <div class="size">4</div>
+        <div class="size">6</div>
+        <div class="size">8</div>
+      </div>
+      <button class="productButton" id="buyProductBtn">Buy Now</button>
+    </div>
+
+<!-- Payment Overlay (sibling of #payment, NOT nested inside it) -->
+    <div class="payment-overlay" id="paymentOverlay"></div>
+
+    <!-- Payment Modal -->
+    <div class="payment" id="payment">
+      <span class="close" id="closePayment">✕</span>
+      <h2 class="payTitle">Personal Information</h2>
+      <label>Name and Surname</label>
+      <input type="text" class="payInput" id="payName" placeholder="John Doe">
+      <label>Phone Number</label>
+      <input type="tel" class="payInput" id="payPhone" placeholder="+27 65 365 4128">
+      <label>Address</label>
+      <input type="text" class="payInput" id="payAddress" placeholder="81 Bloumtain, Tygervalley">
+      <h2 class="payTitle">Card Information</h2>
+      <div class="cardIcons">
+        <img src="./img/card (1).png" width="40" alt="Visa" class="cardIcon">
+        <img src="./img/card.png" width="40" alt="Mastercard" class="cardIcon">
+      </div>
+      <input type="password" class="payInput" id="payCardNumber" placeholder="Card Number">
+      <div class="cardInfo">
+        <input type="text" placeholder="MM" class="payInput sm" id="payMM">
+        <input type="text" placeholder="YYYY" class="payInput sm" id="payYYYY">
+        <input type="text" placeholder="CVV" class="payInput sm" id="payCVV">
+      </div>
+      <button class="payButton" id="payButton">Checkout!</button>
+    </div>
+
+    <!-- Success popup -->
+    <div class="success-overlay" id="successOverlay">
+      <div class="success-popup">
+        <div class="success-icon">✓</div>
+        <h2>Payment Made!</h2>
+        <p>Thank you for your order. A confirmation has been sent to you.</p>
+        <button class="success-close" id="successClose">Done</button>
+      </div>
+    </div>
+
+  <!-- ========== GALLERY ========== -->
+  <section class="gallery">
+    <div class="galleryItem">
+      <h2 class="galleryTitle">Be Yourself!</h2>
+      <img src="./img/product1.jpg" alt="Be Yourself" class="galleryImg">
+    </div>
+    <div class="galleryItem">
+      <img src="./img/product3.jpg" alt="Walk your Journey" class="galleryImg">
+      <h2 class="galleryTitle">Walk your Journey!</h2>
+    </div>
+    <div class="galleryItem">
+      <h2 class="galleryTitle">Just Do It!</h2>
+      <img src="./img/product2.jpg" alt="Just Do It" class="galleryImg">
+    </div>
+  </section>
+
+  <!-- ========== NEW SEASON ========== -->
+  <section class="newSeason">
+    <div class="nsItem nsItem--img">
+      <img src="https://images.pexels.com/photos/3611797/pexels-photo-3611797.jpeg" alt="New Season" class="nsImg">
+    </div>
+    <div class="nsItem nsItem--text">
+      <h3 class="nsTitleSm">Summer New Addition</h3>
+      <h1 class="nsTitle">New Season</h1>
+      <h1 class="nsTitle">New Collection</h1>
+      <a href="#nav">
+        <button class="nsButton">Choose Your Style</button>
+      </a>
+    </div>
+    <div class="nsItem nsItem--img">
+      <img src="https://images.pexels.com/photos/8644467/pexels-photo-8644467.jpeg" alt="New Collection" class="nsImg">
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="footerLeft">
+      <div class="footerMenu">
+        <h3 class="fMenuTitle">About Us</h3>
+        <ul class="fList">
+          <li class="fListItem">Company</li>
+          <li class="fListItem">Contact</li>
+          <li class="fListItem">Career</li>
+          <li class="fListItem">Affiliates</li>
+          <li class="fListItem">Stores</li>
+        </ul>
+      </div>
+      <div class="footerMenu">
+        <h3 class="fMenuTitle">Useful Links</h3>
+        <ul class="fList">
+          <li class="fListItem">Support</li>
+          <li class="fListItem">Refund</li>
+          <li class="fListItem">FAQ</li>
+          <li class="fListItem">Feedback</li>
+          <li class="fListItem">Stories</li>
+        </ul>
+      </div>
+      <div class="footerMenu">
+        <h3 class="fMenuTitle">Products</h3>
+        <ul class="fList">
+          <li class="fListItem">Air Force</li>
+          <li class="fListItem">Air Jordan</li>
+          <li class="fListItem">Blazer</li>
+          <li class="fListItem">Crater</li>
+          <li class="fListItem">Hippie</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footerRight">
+      <div class="footerRightMenu">
+        <h3 class="fMenuTitle">Subscribe to our Newsletter</h3>
+        <div class="fMail">
+          <input type="email" placeholder="your@gmail.com" class="fInput">
+          <button class="fButton">Join!</button>
+        </div>
+      </div>
+      <div class="footerRightMenu">
+        <h3 class="fMenuTitle">Follow Us</h3>
+        <div class="fIcons">
+          <img src="./img/facebook.png" alt="Facebook" class="fIcon">
+          <img src="./img/twitter.png" alt="Twitter" class="fIcon">
+          <img src="./img/whatsapp.png" alt="WhatsApp" class="fIcon">
+          <img src="./img/instagram.png" alt="Instagram" class="fIcon">
+        </div>
+      </div>
+      <p class="copyright">© Cikiso Nonkululeko. All rights reserved. 2026.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+
+
+</body>
+</html>
