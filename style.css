@@ -255,7 +255,7 @@ nav ul li a.active {
    SLIDER
 ================================ */
 .slider {
-  background: url("/img/background.jpg") center/cover no-repeat;
+  background: url("img/background.jpg") center/cover no-repeat;
   clip-path: polygon(0 0, 100% 0, 100% 80%, 0% 100%);
   overflow: hidden;
   position: relative;
