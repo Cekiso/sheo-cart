@@ -1,14 +1,14 @@
-# Sneakers — E-commerce Landing Page
+# Sneakers - E-commerce Landing Page
 
 A single-page sneaker store built with vanilla HTML, CSS, and JavaScript. Features a product slider, product customizer (color/size selection), a shopping cart with persistent storage, and a mock checkout flow.
 
 ## Features
 
-- **Hero slider** — Browse featured products (Air Force, Dunk, Jordan) with a "Buy Now" button on each slide.
-- **Product customizer** — Select a product from the nav menu, switch between color variants, and pick a size.
-- **Shopping cart** — Add items from the slider or the product customizer, adjust quantities, remove items, and see a running total. Cart contents persist across page reloads via `localStorage`.
-- **Checkout flow** — Cart → payment modal → form validation → mock payment confirmation popup.
-- **Responsive nav** — Hamburger menu for mobile.
+- **Hero slider** - Browse featured products (Air Force, Dunk, Jordan) with a "Buy Now" button on each slide.
+- **Product customizer** - Select a product from the nav menu, switch between color variants, and pick a size.
+- **Shopping cart** - Add items from the slider or the product customizer, adjust quantities, remove items, and see a running total. Cart contents persist across page reloads via `localStorage`.
+- **Checkout flow** - Cart → payment modal → form validation → mock payment confirmation popup.
+- **Responsive nav** - Hamburger menu for mobile.
 
 ## File Structure
 
@@ -67,7 +67,7 @@ If any of these are missing or misnamed in the HTML, the corresponding `document
 
 - **"Buy Now" does nothing:** Open DevTools (F12) → Console. A red error naming a `null` element almost always means an ID in `script.js` doesn't match the HTML. Fix the HTML first — script errors halt the whole file.
 - **Cart total looks wrong after edits:** Clear `localStorage` (`localStorage.removeItem("cart")` in the console) to reset to a clean state during development.
-- **Typo note:** Product objects use the key `tatle` (not `title`) throughout — this is intentional to match the existing data structure, not a bug to "fix" unless you rename it everywhere consistently.
+- **Typo note:** Product objects use the key `tatle` (not `title`) throughout - this is intentional to match the existing data structure, not a bug to "fix" unless you rename it everywhere consistently.
 
 ## Credits
 
